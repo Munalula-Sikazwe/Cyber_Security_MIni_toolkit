@@ -1,0 +1,1359 @@
+[33mcommit 1c36001559cb83990aa478a14ef253e364b3d645[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Munalula-Sikazwe <munalulasikazwe67@gmail.com>
+Date:   Sat Oct 10 03:06:27 2020 +0200
+
+    Creating a remote repo
+
+[1mdiff --git a/.idea/.gitignore b/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..73f69e0[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/.gitignore[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[32m+[m[32m# Datasource local storage ignored files[m
+[32m+[m[32m/dataSources/[m
+[32m+[m[32m/dataSources.local.xml[m
+[32m+[m[32m# Editor-based HTTP Client requests[m
+[32m+[m[32m/httpRequests/[m
+[1mdiff --git a/.idea/Cyber_Security_Mini_Tool_kit.iml b/.idea/Cyber_Security_Mini_Tool_kit.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..74d515a[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/Cyber_Security_Mini_Tool_kit.iml[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="PYTHON_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager">[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$">[m
+[32m+[m[32m      <excludeFolder url="file://$MODULE_DIR$/venv" />[m
+[32m+[m[32m    </content>[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..03d9549[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/inspectionProfiles/Project_Default.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <profile version="1.0">[m
+[32m+[m[32m    <option name="myName" value="Project Default" />[m
+[32m+[m[32m    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />[m
+[32m+[m[32m  </profile>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..105ce2d[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/inspectionProfiles/profiles_settings.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <settings>[m
+[32m+[m[32m    <option name="USE_PROJECT_PROFILE" value="false" />[m
+[32m+[m[32m    <version value="1.0" />[m
+[32m+[m[32m  </settings>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8750fb8[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -0,0 +1,4 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (Cyber_Security_Mini_Tool_kit)" project-jdk-type="Python SDK" />[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c4de51d[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/Cyber_Security_Mini_Tool_kit.iml" filepath="$PROJECT_DIR$/.idea/Cyber_Security_Mini_Tool_kit.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/Decryption.py b/Decryption.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..31080e7[m
+[1m--- /dev/null[m
+[1m+++ b/Decryption.py[m
+[36m@@ -0,0 +1,51 @@[m
+[32m+[m[32mHEADER_SIZE = 1078  # Header size of bmp file : 14 + 40 + 1024 bytes[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Decryption:[m
+[32m+[m[32m    def read_header(self):[m
+[32m+[m[32m        # Read unchanged header[m
+[32m+[m[32m        for i in range(0, HEADER_SIZE):[m
+[32m+[m[32m            self.f.read(1)[m
+[32m+[m
+[32m+[m[32m    def get_int(self):[m
+[32m+[m[32m        curr_hide_binary = ''[m
+[32m+[m[32m        # Get one hide char from eight bytes[m
+[32m+[m[32m        for i in range(0, 32):[m
+[32m+[m[32m            curr_image_byte = self.f.read(1)[m
+[32m+[m[32m            if len(curr_image_byte) == 0:[m
+[32m+[m[32m                return ''[m
+[32m+[m[32m            curr_image_binary = '{0:08b}'.format(ord(curr_image_byte))[m
+[32m+[m[32m            # In little endian mode, LSB is the first bit[m
+[32m+[m[32m            curr_hide_binary += curr_image_binary[0][m
+[32m+[m[32m        curr_hide_int = int(curr_hide_binary, 2)[m
+[32m+[m[32m        return curr_hide_int[m
+[32m+[m
+[32m+[m[32m    def get_char(self):[m
+[32m+[m[32m        curr_hide_binary = ''[m
+[32m+[m[32m        # Get one hide char from eight bytes[m
+[32m+[m[32m        for i in range(0, 8):[m
+[32m+[m[32m            curr_image_byte = self.f.read(1)[m
+[32m+[m[32m            if len(curr_image_byte) == 0:[m
+[32m+[m[32m                return ''[m
+[32m+[m[32m            curr_image_binary = '{0:08b}'.format(ord(curr_image_byte))[m
+[32m+[m[32m            # In little endian mode, LSB is the first bit[m
+[32m+[m[32m            curr_hide_binary += curr_image_binary[0][m
+[32m+[m[32m        curr_hide_char = chr(int(curr_hide_binary, 2))[m
+[32m+[m[32m        return curr_hide_char[m
+[32m+[m
+[32m+[m[32m    def get_hide(self):[m
+[32m+[m[32m        curr_hide_int = self.get_int()[m
+[32m+[m[32m        for i in range(0, curr_hide_int):[m
+[32m+[m[32m            curr_hide_char = self.get_char()[m
+[32m+[m[32m            self.hide_msg += curr_hide_char[m
+[32m+[m[32m        self.f.close()[m
+[32m+[m
+[32m+[m[32m    def run(self):[m
+[32m+[m[32m        self.read_header()[m
+[32m+[m[32m        self.get_hide()[m
+[32m+[m[32m        return self.hide_msg[m
+[32m+[m
+[32m+[m[32m    def __init__(self, new_file_name):[m
+[32m+[m[32m        self.new_file_name = new_file_name[m
+[32m+[m[32m        self.f = open(self.new_file_name, 'rb')[m
+[32m+[m[32m        self.hide_msg = ''[m
+[1mdiff --git a/Encryption.py b/Encryption.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f922842[m
+[1m--- /dev/null[m
+[1m+++ b/Encryption.py[m
+[36m@@ -0,0 +1,101 @@[m
+[32m+[m[32m# http://www.cnblogs.com/Matrix_Yao/archive/2009/12/02/1615295.html[m
+[32m+[m
+[32m+[m[32m# Low address stores small value[m
+[32m+[m[32m# Little endian[m
+[32m+[m
+[32m+[m[32m# Take cat.bmp as example[m
+[32m+[m
+[32m+[m[32m# bmp file header:      14 byte[m
+[32m+[m[32m#   bfType:             2 byte      424d[m
+[32m+[m[32m#   bfSize:             4 byte      3699 0100[m
+[32m+[m[32m#   bfReversed1:        2 byte      0000[m
+[32m+[m[32m#   bfReversed2:        2 byte      0000[m
+[32m+[m[32m#   bfOffBits:          4 byte      3604 0000       436     1078[m
+[32m+[m[32m# bitmap info header:   40 byte[m
+[32m+[m[32m#   biSize:             4 byte      2800 0000       28      40[m
+[32m+[m[32m#   biWidth:            4 byte      6801 0000       168     360[m
+[32m+[m[32m#   biHeight:           4 byte      2001 0000       128     296[m
+[32m+[m[32m#   biPlanes:           2 byte      0100[m
+[32m+[m[32m#   biBitCount:         2 byte      0800            8       8[m
+[32m+[m[32m#   biCompression:      4 byte      0000 0000       8       8[m
+[32m+[m[32m#   biSizeImage:        4 byte      00bf 0400[m
+[32m+[m[32m#   biXPelsPerMeter:    4 byte      c40e 0000[m
+[32m+[m[32m#   biYPelsPerMeter:    4 byte      c40e 0000[m
+[32m+[m[32m#   biClrUsed:          4 byte      0000 0000[m
+[32m+[m[32m#   biClrImportant:     4 byte      0000 0000[m
+[32m+[m
+[32m+[m[32mHEADER_SIZE = 1078  # Header size of bmp file : 14 + 40 + 1024 bytes[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Encryption:[m
+[32m+[m[32m    def open_file(self):[m
+[32m+[m[32m        with open(self.origin_file_name, 'rb') as f:[m
+[32m+[m[32m            # Read image file into bytes[m
+[32m+[m[32m            self.origin_image_data = f.read()[m
+[32m+[m
+[32m+[m[32m    def copy_header(self):[m
+[32m+[m[32m        # Read bmp file header (14) and bitmap info header (40) and palette (1024)[m
+[32m+[m[32m        # Copy them into new image[m
+[32m+[m[32m        for i in range(0, HEADER_SIZE):[m
+[32m+[m[32m            self.new_image_data.append(self.origin_image_data[i])[m
+[32m+[m[32m            self.bytes_counter += 1[m
+[32m+[m
+[32m+[m[32m    def hide_int(self, curr_hide_int):[m
+[32m+[m[32m        curr_hide_binary = '{:032b}'.format(curr_hide_int)[m
+[32m+[m[32m        for i in range(0, 32):[m
+[32m+[m[32m            curr_image_binary = '{0:08b}'.format(self.origin_image_data[self.bytes_counter])[m
+[32m+[m[32m            # In little endian mode, LSB is the first bit[m
+[32m+[m[32m            new_image_binary = curr_hide_binary[i] + curr_image_binary[1:][m
+[32m+[m[32m            new_image_int = int(new_image_binary, 2)[m
+[32m+[m[32m            self.new_image_data.append(new_image_int)[m
+[32m+[m[32m            self.bytes_counter += 1[m
+[32m+[m
+[32m+[m[32m    def hide_char(self, curr_hide_byte):[m
+[32m+[m[32m        # ord(): convert char to int[m
+[32m+[m[32m        # Then get binary value of one byte[m
+[32m+[m[32m        # Example:[m
+[32m+[m[32m        # a = '{0:08b}'.format(255)[m
+[32m+[m[32m        # print(a) # '1111111'[m
+[32m+[m[32m        curr_hide_binary = '{0:08b}'.format(ord(curr_hide_byte))[m
+[32m+[m
+[32m+[m[32m        # Hide one byte in eight bytes[m
+[32m+[m[32m        for i in range(0, len(curr_hide_binary)):[m
+[32m+[m[32m            curr_image_binary = '{0:08b}'.format(self.origin_image_data[self.bytes_counter])[m
+[32m+[m[32m            # In little endian mode, LSB is the first bit[m
+[32m+[m[32m            new_image_binary = curr_hide_binary[i] + curr_image_binary[1:][m
+[32m+[m[32m            new_image_int = int(new_image_binary, 2)[m
+[32m+[m[32m            self.new_image_data.append(new_image_int)[m
+[32m+[m[32m            self.bytes_counter += 1[m
+[32m+[m
+[32m+[m[32m    def do_hide(self):[m
+[32m+[m[32m        # Hide length of message[m
+[32m+[m[32m        self.hide_int(len(self.hide_msg))[m
+[32m+[m[32m        # Hide message byte by byte[m
+[32m+[m[32m        for i in range(0, len(self.hide_msg)):[m
+[32m+[m[32m            self.hide_char(self.hide_msg[i])[m
+[32m+[m
+[32m+[m[32m    def copy_rest(self):[m
+[32m+[m[32m        # Copy rest data into new image[m
+[32m+[m[32m        left_data = self.origin_image_data[self.bytes_counter:][m
+[32m+[m[32m        for left_byte in left_data:[m
+[32m+[m[32m            self.new_image_data.append(left_byte)[m
+[32m+[m
+[32m+[m[32m    def write_file(self):[m
+[32m+[m[32m        with open(self.new_file_name, 'wb') as out:[m
+[32m+[m[32m            new_image_bytes = bytearray(self.new_image_data)[m
+[32m+[m[32m            out.write(new_image_bytes)[m
+[32m+[m
+[32m+[m[32m    def run(self):[m
+[32m+[m[32m        self.open_file()[m
+[32m+[m[32m        self.copy_header()[m
+[32m+[m[32m        self.do_hide()[m
+[32m+[m[32m        self.copy_rest()[m
+[32m+[m[32m        self.write_file()[m
+[32m+[m
+[32m+[m[32m    def __init__(self, origin_file_name, new_file_name, hide_msg):[m
+[32m+[m[32m        self.origin_file_name = origin_file_name[m
+[32m+[m[32m        self.new_file_name = new_file_name[m
+[32m+[m[32m        self.hide_msg = hide_msg[m
+[32m+[m[32m        self.bytes_counter = 0  # Function as a pointer[m
+[32m+[m[32m        self.origin_image_data = ''  # Type: bytes[m
+[32m+[m[32m        self.new_image_data = []  # Type: int array[m
+[1mdiff --git a/GUI.py b/GUI.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..766d482[m
+[1m--- /dev/null[m
+[1m+++ b/GUI.py[m
+[36m@@ -0,0 +1,209 @@[m
+[32m+[m[32mfrom tkinter import *[m
+[32m+[m[32mfrom tkinter.filedialog import askopenfilename[m
+[32m+[m[32mfrom PIL import Image, ImageTk[m
+[32m+[m[32mfrom Encryption import Encryption[m
+[32m+[m[32mfrom Decryption import Decryption[m
+[32m+[m[32mimport math[m
+[32m+[m[32mclass Application(Frame):[m
+[32m+[m[32m    def __init__(self, master=None):[m
+[32m+[m[32m        self.file_name = ''[m
+[32m+[m[32m        Frame.__init__(self, master)[m
+[32m+[m[32m        self.pack()[m
+[32m+[m[32m        self.create_widgets()[m
+[32m+[m
+[32m+[m[32m    def open_file(self):[m
+[32m+[m[32m        self.file_name = askopenfilename(filetypes=[('BMP File', '*.bmp')])[m
+[32m+[m
+[32m+[m[32m        # change label text dynamically[m
+[32m+[m[32m        self.name_label['text'] = 'Name: ' + self.file_name[m
+[32m+[m
+[32m+[m[32m        # clear message in msg_box[m
+[32m+[m[32m        if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m            self.msg_box.delete('1.0', END)[m
+[32m+[m
+[32m+[m[32m        # clear image file[m
+[32m+[m[32m        # img & photo must be global or image will not show[m
+[32m+[m[32m        global left_img[m
+[32m+[m[32m        left_img = None[m
+[32m+[m[32m        global left_photo[m
+[32m+[m[32m        left_photo = None[m
+[32m+[m[32m        global right_img[m
+[32m+[m[32m        right_img = None[m
+[32m+[m[32m        global right_photo[m
+[32m+[m[32m        right_photo = None[m
+[32m+[m
+[32m+[m[32m        left_img = Image.open(self.file_name)[m
+[32m+[m[32m        w, h = left_img.size[m
+[32m+[m[32m        self.dimensions_label['text'] = 'Dimensions: ' + str(w) + 'x' + str(h)[m
+[32m+[m
+[32m+[m[32m        self.size_label['text'] = 'Size: ' + str(os.path.getsize(self.file_name)) + 'Bytes'[m
+[32m+[m
+[32m+[m[32m        # mode https://pillow.readthedocs.io/en/4.1.x/handbook/concepts.html#concept-modes[m
+[32m+[m[32m        if left_img.mode == 'L':[m
+[32m+[m[32m            self.mode_label['text'] = 'Mode: 8-Bit Pixels, Black and White'[m
+[32m+[m[32m            self.available = int((w * h) / 8 - 4)[m
+[32m+[m[32m            if self.available <= 0:[m
+[32m+[m[32m                self.available_label['text'] = 'Available Size For Stega: 0 Bytes'[m
+[32m+[m[32m            else:[m
+[32m+[m[32m                self.available_label['text'] = 'Available Size For Stega: ' + str(self.available) + 'Bytes'[m
+[32m+[m[32m        elif left_img.mode == 'RGB':[m
+[32m+[m[32m            self.mode_label['text'] = 'Mode: 3x8-Bit Pixels, True Color'[m
+[32m+[m[32m            self.available = int((w * h * 3) / 8 - 4)[m
+[32m+[m[32m            if self.available <= 0:[m
+[32m+[m[32m                self.available_label['text'] = 'Available Size For Stega: 0 Bytes'[m
+[32m+[m[32m            else:[m
+[32m+[m[32m                self.available_label['text'] = 'Available Size For Stega: ' + str(self.available) + 'Bytes'[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            self.mode_label['text'] = 'Mode: ' + left_img.mode[m
+[32m+[m
+[32m+[m[32m        # resize img[m
+[32m+[m[32m        scale_w = img_display_width / w[m
+[32m+[m[32m        scale_h = img_display_height / h[m
+[32m+[m[32m        scale = min(scale_w, scale_h)[m
+[32m+[m[32m        new_w = math.ceil(scale * w)[m
+[32m+[m[32m        new_h = math.ceil(scale * h)[m
+[32m+[m[32m        # Image.NEAREST http://pillow.readthedocs.io/en/4.1.x/releasenotes/2.7.0.html[m
+[32m+[m[32m        left_img = left_img.resize((new_w, new_h), Image.NEAREST)[m
+[32m+[m
+[32m+[m[32m        left_photo = ImageTk.PhotoImage(left_img)[m
+[32m+[m
+[32m+[m[32m        self.left_img_canvas.create_image(img_display_width / 2, img_display_height / 2, anchor=CENTER,[m
+[32m+[m[32m                                          image=left_photo)[m
+[32m+[m
+[32m+[m[32m    def decry(self):[m
+[32m+[m[32m        if self.file_name == '':[m
+[32m+[m[32m            if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'Please open a bitmap file first.')[m
+[32m+[m[32m            return 0[m
+[32m+[m[32m        elif self.available < 1:[m
+[32m+[m[32m            if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'This image is too short to hide message.')[m
+[32m+[m[32m            return 0[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            decryption = Decryption(self.file_name)[m
+[32m+[m[32m            decry_msg = decryption.run()[m
+[32m+[m[32m            if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'Hidden message: "' + decry_msg + '".')[m
+[32m+[m
+[32m+[m[32m    def encry(self):[m
+[32m+[m[32m        hide_msg = self.msg_box.get('1.0', END).replace('\n', '')[m
+[32m+[m[32m        if self.file_name == '':[m
+[32m+[m[32m            if hide_msg == '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'Please open a bitmap file first.')[m
+[32m+[m[32m            return 0[m
+[32m+[m[32m        elif hide_msg == '':[m
+[32m+[m[32m            self.msg_box.insert(END, 'Input hidden message here.')[m
+[32m+[m[32m            return 0[m
+[32m+[m[32m        elif len(hide_msg) > self.available:[m
+[32m+[m[32m            if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'Input hidden message is larger than ' + str(self.available) + ' bytes.')[m
+[32m+[m[32m            return 0[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            origin_file_name = self.file_name[m
+[32m+[m[32m            # add 'hidden' to new image file name[m
+[32m+[m[32m            new_file_name = self.file_name[:-4] + '_hidden' + self.file_name[-4:][m
+[32m+[m[32m            encryption = Encryption(origin_file_name, new_file_name, hide_msg)[m
+[32m+[m[32m            encryption.run()[m
+[32m+[m
+[32m+[m[32m            global right_img[m
+[32m+[m[32m            right_img = Image.open(self.file_name)[m
+[32m+[m[32m            w, h = right_img.size[m
+[32m+[m[32m            # resize img[m
+[32m+[m[32m            scale_w = img_display_width / w[m
+[32m+[m[32m            scale_h = img_display_height / h[m
+[32m+[m[32m            scale = min(scale_w, scale_h)[m
+[32m+[m[32m            new_w = math.ceil(scale * w)[m
+[32m+[m[32m            new_h = math.ceil(scale * h)[m
+[32m+[m[32m            img = right_img.resize((new_w, new_h), Image.NEAREST)[m
+[32m+[m
+[32m+[m[32m            global right_photo[m
+[32m+[m[32m            right_photo = ImageTk.PhotoImage(img)[m
+[32m+[m[32m            self.right_img_canvas.create_image(img_display_width / 2, img_display_height / 2, anchor=CENTER,[m
+[32m+[m[32m                                               image=right_photo)[m
+[32m+[m
+[32m+[m[32m            if self.msg_box.get('1.0', END) != '':[m
+[32m+[m[32m                self.msg_box.delete('1.0', END)[m
+[32m+[m[32m            self.msg_box.insert(END, 'Saved new file into ' + new_file_name + '.')[m
+[32m+[m
+[32m+[m[32m    def create_widgets(self):[m
+[32m+[m[32m        # do not try to use grid and pack in the same window[m
+[32m+[m
+[32m+[m[32m        # left part -----------------------------------------------------------[m
+[32m+[m[32m        left_frame = Frame(self)[m
+[32m+[m[32m        left_frame.pack(side=LEFT)[m
+[32m+[m
+[32m+[m[32m        show_frame = Frame(left_frame)[m
+[32m+[m[32m        show_frame.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        open_frame = Frame(show_frame)[m
+[32m+[m[32m        open_frame.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        open_label = Label(open_frame, text='Open BMP File:')[m
+[32m+[m[32m        open_label.pack(side=LEFT)[m
+[32m+[m
+[32m+[m[32m        open_button = Button(open_frame, text='Open', command=self.open_file)[m
+[32m+[m[32m        open_button.pack(side=LEFT)[m
+[32m+[m
+[32m+[m[32m        self.name_label = Label(show_frame, text='Name: ')[m
+[32m+[m[32m        self.name_label.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.dimensions_label = Label(show_frame, text='Dimensions: ')[m
+[32m+[m[32m        self.dimensions_label.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.size_label = Label(show_frame, text='Size: ')[m
+[32m+[m[32m        self.size_label.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.mode_label = Label(show_frame, text='Available Size For Stega: ')[m
+[32m+[m[32m        self.mode_label.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.available_label = Label(show_frame, text='Mode: ')[m
+[32m+[m[32m        self.available_label.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.left_img_canvas = Canvas(left_frame, bg='grey', width=img_display_width, height=img_display_height)[m
+[32m+[m[32m        self.left_img_canvas.pack(side=BOTTOM)[m
+[32m+[m
+[32m+[m[32m        # right part ------------------------------------------------------[m
+[32m+[m[32m        right_frame = Frame(self)[m
+[32m+[m[32m        right_frame.pack(side=RIGHT)[m
+[32m+[m
+[32m+[m[32m        en_de_cry_frame = Frame(right_frame)[m
+[32m+[m[32m        en_de_cry_frame.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        decry_button = Button(en_de_cry_frame, text='Decryption', command=self.decry)[m
+[32m+[m[32m        decry_button.pack(side=LEFT)[m
+[32m+[m
+[32m+[m[32m        encry_button = Button(en_de_cry_frame, text='Encryption', command=self.encry)[m
+[32m+[m[32m        encry_button.pack(side=RIGHT)[m
+[32m+[m
+[32m+[m[32m        msg_frame = Frame(right_frame)[m
+[32m+[m[32m        msg_frame.pack(side=TOP)[m
+[32m+[m
+[32m+[m[32m        self.msg_box = Text(msg_frame, width=42, height=7)[m
+[32m+[m[32m        self.msg_box.pack(side=BOTTOM)[m
+[32m+[m
+[32m+[m[32m        # right button part ---------------------------------------------------[m
+[32m+[m[32m        self.right_img_canvas = Canvas(right_frame, bg='grey', width=img_display_width, height=img_display_height)[m
+[32m+[m[32m        self.right_img_canvas.pack(side=BOTTOM)[m
+[32m+[m
+[32m+[m
+[32m+[m[32mleft_img = None[m
+[32m+[m[32mleft_photo = None[m
+[32m+[m[32mright_img = None[m
+[32m+[m[32mright_photo = None[m
+[32m+[m[32mimg_display_width = 300[m
+[32m+[m[32mimg_display_height = 200[m
+[32m+[m[32mapp = Application()[m
+[32m+[m[32mapp.master.title('Munalula Sikazwe Simple steganography')[m
+[32m+[m[32m# quit_button = Button(app,text= 'Exit',fg = 'red')[m
+[32m+[m[32m# def quit_gui_button():[m
+[32m+[m[32m#[m
+[32m+[m[32m#     app.quit()[m
+[32m+[m[32m#[m
+[32m+[m[32m# quit_button.pack()[m
+[32m+[m[32m# quit_button.bind('<Button-1>',quit_gui_button())[m
+[32m+[m[32mapp.mainloop()[m
+[1mdiff --git a/GUI_Hash_CHECKSUM.py b/GUI_Hash_CHECKSUM.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..591efd7[m
+[1m--- /dev/null[m
+[1m+++ b/GUI_Hash_CHECKSUM.py[m
+[36m@@ -0,0 +1,145 @@[m
+[32m+[m[32mfrom tkinter import *[m[41m[m
+[32m+[m[32mfrom tkinter import filedialog[m[41m[m
+[32m+[m[32mimport hashlib[m[41m[m
+[32m+[m[32mimport sys[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mroot = Tk()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1 = StringVar()[m[41m[m
+[32m+[m[32mf2 = StringVar()[m[41m[m
+[32m+[m[32mSha256f1 = StringVar()[m[41m[m
+[32m+[m[32mSha256f2 = StringVar()[m[41m[m
+[32m+[m[32mMD5f1 = StringVar()[m[41m[m
+[32m+[m[32mMD5f2 = StringVar()[m[41m[m
+[32m+[m[32mSha1f1 = StringVar()[m[41m[m
+[32m+[m[32mSha1f2 = StringVar()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef hash_bytestr_iter(bytesiter, hasher, ashexstr=True):[m[41m[m
+[32m+[m	[32mfor block in bytesiter:[m[41m[m
+[32m+[m		[32mhasher.update(block)[m[41m[m
+[32m+[m	[32mreturn (hasher.hexdigest() if ashexstr else hasher.digest())[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef file_as_blockiter(afile, blocksize=65536):[m[41m[m
+[32m+[m	[32mwith afile:[m[41m[m
+[32m+[m		[32mblock = afile.read(blocksize)[m[41m[m
+[32m+[m		[32mwhile len(block) > 0:[m[41m[m
+[32m+[m			[32myield block[m[41m[m
+[32m+[m			[32mblock = afile.read(blocksize)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef CmpHashes():[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m#Check MD5[m[41m[m
+[32m+[m	[32mif MD5f1.get() and MD5f2.get():[m[41m[m
+[32m+[m		[32mif MD5f1.get() == MD5f2.get():[m[41m[m
+[32m+[m			[32mprint("MD5 match!")[m[41m[m
+[32m+[m			[32mMD5Lbl.config(bg='green')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m		[32melse:[m[41m[m
+[32m+[m			[32mprint("MD5 does not match!")[m[41m[m
+[32m+[m			[32mMD5Lbl.config(bg='red')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m	[32melse:[m[41m[m
+[32m+[m		[32mMD5Lbl.config(bg='yellow')[m[41m[m
+[32m+[m		[32mprint("MD5 data unavalible!")[m[41m[m
+[32m+[m		[32mroot.update()[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m#Check Sha1[m[41m[m
+[32m+[m	[32mif Sha1f1.get() and Sha1f2.get():[m[41m[m
+[32m+[m		[32mif Sha1f1.get() == Sha1f2.get():[m[41m[m
+[32m+[m			[32mprint("Sha1 match!")[m[41m[m
+[32m+[m			[32mSha1Lbl.config(bg='green')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m		[32melse:[m[41m[m
+[32m+[m			[32mprint("Sha1 does not match!")[m[41m[m
+[32m+[m			[32mSha1Lbl.config(bg='red')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m	[32melse:[m[41m[m
+[32m+[m		[32mSha1Lbl.config(bg='yellow')[m[41m[m
+[32m+[m		[32mprint("Sha1 data unavalible!")[m[41m[m
+[32m+[m		[32mroot.update()[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m#Check Sha256[m[41m[m
+[32m+[m	[32mif Sha256f1.get() and Sha256f2.get():[m[41m[m
+[32m+[m		[32mif Sha256f1.get() == Sha256f2.get():[m[41m[m
+[32m+[m			[32mprint("Sha256 match!")[m[41m[m
+[32m+[m			[32mSha256Lbl.config(bg='green')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m		[32melse:[m[41m[m
+[32m+[m			[32mprint("Sha256 does not match!")[m[41m[m
+[32m+[m			[32mSha256Lbl.config(bg='red')[m[41m[m
+[32m+[m			[32mroot.update()[m[41m[m
+[32m+[m	[32melse:[m[41m[m
+[32m+[m		[32mSha256Lbl.config(bg='yellow')[m[41m[m
+[32m+[m		[32mprint("Sha256 data unavalible!")[m[41m[m
+[32m+[m		[32mroot.update()[m[41m				[m
+[32m+[m[41m[m
+[32m+[m[32mdef getFile(fName, MD5f, SHA1, Sha256f):[m[41m[m
+[32m+[m[41m	[m
+[32m+[m	[32mroot.filename = filedialog.askopenfilename( )[m[41m[m
+[32m+[m	[32mif root.filename == "":[m[41m[m
+[32m+[m		[32mreturn 0[m[41m[m
+[32m+[m	[32mfName.set(root.filename)[m[41m[m
+[32m+[m	[32mMD5f.set(str(hash_bytestr_iter(file_as_blockiter(open(fName.get(), 'rb')), hashlib.md5())))[m[41m[m
+[32m+[m	[32mSHA1.set(str(hash_bytestr_iter(file_as_blockiter(open(fName.get(), 'rb')), hashlib.sha1())))[m[41m[m
+[32m+[m	[32mSha256f.set(str(hash_bytestr_iter(file_as_blockiter(open(fName.get(), 'rb')), hashlib.sha256())))[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mroot.geometry('%dx%d+%d+%d' % (650, 400, 125, 125))[m[41m[m
+[32m+[m[32mroot.title("Munalula Sikazwe 17221351006 Final Project 	CHECKSUM VERIFIER")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m#File one stuff[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1Lbl = Label(root, textvariable=f1, bg="grey", width=35, anchor=W, font=("Courier New", 14)).place(x=20, y=20)[m[41m[m
+[32m+[m[32mf1.set("First file or enter a HASH below.")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1HashLbl1 = Label(root, text="MD5 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=50)[m[41m[m
+[32m+[m[32mf1MD5 = Entry(root, textvariable=MD5f1, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=55)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1HashLbl2 = Label(root, text="Sha1 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=80)[m[41m[m
+[32m+[m[32mf1Sha1 = Entry(root, textvariable=Sha1f1, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=85)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1HashLbl3 = Label(root, text="Sha256 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=110)[m[41m[m
+[32m+[m[32mf1Sha256 = Entry(root, textvariable=Sha256f1, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=115)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf1Btn = Button(root, text="File 1", command=lambda: getFile(f1, MD5f1, Sha1f1, Sha256f1))[m[41m[m
+[32m+[m[32mf1Btn.place(x=450, y=34, anchor="c")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m#File two stuff[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf2Lbl = Label(root, textvariable=f2, bg="grey", width=35, anchor=W, font=("Courier New", 14)).place(x=20, y=190)[m[41m[m
+[32m+[m[32mf2.set("Second file or enter a HASH below.")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf2HashLbl1 = Label(root, text="MD5 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=220)[m[41m[m
+[32m+[m[32mf2MD5 = Entry(root, textvariable=MD5f2, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=225)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf2HashLbl2 = Label(root, text="Sha1 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=250)[m[41m[m
+[32m+[m[32mf2Sha1 = Entry(root, textvariable=Sha1f2, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=255)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf2HashLbl3 = Label(root, text="Sha256 : ", width=10, anchor=W, font=("Courier New", 12)).place(x=20, y=280)[m[41m[m
+[32m+[m[32mf2Sha256 = Entry(root, textvariable=Sha256f2, bg="gold", width=68, font=("Courier New", 8)).place(x=110, y=285)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mf2Btn = Button(root, text="File 2", command=lambda: getFile(f2, MD5f2, Sha1f2, Sha256f2))[m[41m[m
+[32m+[m[32mf2Btn.place(x=450, y=204, anchor="c")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mMD5Lbl = Label(root, text="MD5", width=10, bg="yellow", font=("Courier New", 12))[m[41m[m
+[32m+[m[32mMD5Lbl.place(x=100, y=350)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mSha1Lbl = Label(root, text="Sha1", width=10, bg="yellow", font=("Courier New", 12))[m[41m[m
+[32m+[m[32mSha1Lbl.place(x=200, y=350)[m[41m[m
+[32m+[m[32mSha256Lbl = Label(root, text="Sha256", width=10, bg="yellow", font=("Courier New", 12))[m[41m[m
+[32m+[m[32mSha256Lbl.place(x=300, y=350)[m[41m[m
+[32m+[m[32mCmpBtn = Button(root, text="Compare", anchor="c", command=lambda: CmpHashes())#MD5Lbl, Sha1Lbl, Sha256Lbl))[m[41m[m
+[32m+[m[32mCmpBtn.place(x=460, y=354)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mquit_button = Button(root,text='Exit', fg='red',)[m[41m[m
+[32m+[m[32mquit_button.pack()[m[41m[m
+[32m+[m[32mdef quit_gui_button(event):[m[41m[m
+[32m+[m	[32mroot.quit()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mquit_button.pack()[m[41m[m
+[32m+[m[32mquit_button.bind('<Button-1>',quit_gui_button)[m[41m[m
+[32m+[m[32mroot.mainloop()[m[41m[m
+[32m+[m[41m[m
+[1mdiff --git a/Img/24Bit/test1.bmp b/Img/24Bit/test1.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c3d11b3[m
+Binary files /dev/null and b/Img/24Bit/test1.bmp differ
+[1mdiff --git a/Img/24Bit/test2.bmp b/Img/24Bit/test2.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..090fa8c[m
+Binary files /dev/null and b/Img/24Bit/test2.bmp differ
+[1mdiff --git a/Img/24Bit/test3.bmp b/Img/24Bit/test3.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0f7d2a9[m
+Binary files /dev/null and b/Img/24Bit/test3.bmp differ
+[1mdiff --git a/Img/24Bit/test4.bmp b/Img/24Bit/test4.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ba5f151[m
+Binary files /dev/null and b/Img/24Bit/test4.bmp differ
+[1mdiff --git a/Img/24Bit/test5.bmp b/Img/24Bit/test5.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..85a030f[m
+Binary files /dev/null and b/Img/24Bit/test5.bmp differ
+[1mdiff --git a/Img/24Bit/test6.bmp b/Img/24Bit/test6.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f875db3[m
+Binary files /dev/null and b/Img/24Bit/test6.bmp differ
+[1mdiff --git a/Img/256Gray/16X16.bmp b/Img/256Gray/16X16.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fd6adc4[m
+Binary files /dev/null and b/Img/256Gray/16X16.bmp differ
+[1mdiff --git a/Img/256Gray/4X16.bmp b/Img/256Gray/4X16.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0728133[m
+Binary files /dev/null and b/Img/256Gray/4X16.bmp differ
+[1mdiff --git a/Img/256Gray/4X2.BMP b/Img/256Gray/4X2.BMP[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bc03a33[m
+Binary files /dev/null and b/Img/256Gray/4X2.BMP differ
+[1mdiff --git a/Img/256Gray/4X4.bmp b/Img/256Gray/4X4.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3b65f6c[m
+Binary files /dev/null and b/Img/256Gray/4X4.bmp differ
+[1mdiff --git a/Img/256Gray/8X8.bmp b/Img/256Gray/8X8.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9c6f079[m
+Binary files /dev/null and b/Img/256Gray/8X8.bmp differ
+[1mdiff --git a/Img/256Gray/lake.BMP b/Img/256Gray/lake.BMP[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5c3baaa[m
+Binary files /dev/null and b/Img/256Gray/lake.BMP differ
+[1mdiff --git a/PassGen.py b/PassGen.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b689cf9[m
+[1m--- /dev/null[m
+[1m+++ b/PassGen.py[m
+[36m@@ -0,0 +1,82 @@[m
+[32m+[m[32mimport random[m[41m[m
+[32m+[m[32mimport string[m[41m[m
+[32m+[m[32mfrom tkinter import *[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mroot = Tk()[m[41m[m
+[32m+[m[32mroot.geometry("400x280")[m[41m[m
+[32m+[m[32mroot.title("Password Generator")[m[41m[m
+[32m+[m[32mroot.attributes("-fullscreen", 1)[m[41m[m
+[32m+[m[32mroot.resizable(width=FALSE, height=FALSE)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# intro text[m[41m[m
+[32m+[m[32mtitle = StringVar()[m[41m[m
+[32m+[m[32mlabel = Label(root, textvariable=title, anchor=N, pady=10).pack()[m[41m[m
+[32m+[m[32mtitle.set("Password strength:")[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# choice part[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef sel():[m[41m[m
+[32m+[m[32m    selection = choice.get()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mchoice = IntVar()[m[41m[m
+[32m+[m[32mR1 = Radiobutton(root, text="BASIC", variable=choice, value=1, command=sel).pack(anchor=CENTER)[m[41m[m
+[32m+[m[32mR2 = Radiobutton(root, text="MEDIUM", variable=choice, value=2, command=sel).pack(anchor=CENTER)[m[41m[m
+[32m+[m[32mR3 = Radiobutton(root, text="EXTRA", variable=choice, value=3, command=sel).pack(anchor=CENTER)[m[41m[m
+[32m+[m[32mlabelchoice = Label(root)[m[41m[m
+[32m+[m[32mlabelchoice.pack()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# pass lenght information[m[41m[m
+[32m+[m[32mlenlabel = StringVar()[m[41m[m
+[32m+[m[32mlenlabel.set("Password length:")[m[41m[m
+[32m+[m[32mlentitle = Label(root, textvariable=lenlabel).pack()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# pass lenght number[m[41m[m
+[32m+[m[32mval = IntVar()[m[41m[m
+[32m+[m[32mspinlenght = Spinbox(root, from_=8, to_=24, textvariable=val, width=13).pack()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# passprint[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef callback():[m[41m[m
+[32m+[m[32m    lsum.config(text=passgen())[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# clickable button[m[41m[m
+[32m+[m[32mpassgenButton = Button(root, text="Generate Password", relief=RIDGE, bd=5, height=2, command=callback, pady=3)[m[41m[m
+[32m+[m[32mpassgenButton.pack()[m[41m[m
+[32m+[m[32mpassword = str(callback)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# password result message[m[41m[m
+[32m+[m[32mlsum = Label(root, text="")[m[41m[m
+[32m+[m[32mlsum.pack(side=BOTTOM)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# function[m[41m[m
+[32m+[m[32mlownum = string.ascii_uppercase + string.ascii_lowercase + string.digits[m[41m[m
+[32m+[m[32mlowupp = string.ascii_uppercase + string.ascii_lowercase[m[41m[m
+[32m+[m[32msymbols = """`~!@#$%^&*()_-+={}[]\|:;"'<>,.?/"""[m[41m[m
+[32m+[m[32meverything = lowupp + lownum + symbols[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef passgen():[m[41m[m
+[32m+[m[32m    if choice.get() == 1:[m[41m[m
+[32m+[m[32m        return "".join(random.sample(lowupp, val.get()))[m[41m[m
+[32m+[m[32m    elif choice.get() == 2:[m[41m[m
+[32m+[m[32m        return "".join(random.sample(lownum, val.get()))[m[41m[m
+[32m+[m[32m    elif choice.get() == 3:[m[41m[m
+[32m+[m[32m        return "".join(random.sample(everything, val.get()))[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mdef quit_pass_gen(event):[m[41m[m
+[32m+[m[32m    root.quit()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mquit_button = Button(root, text='Exit', fg='red')[m[41m[m
+[32m+[m[32mquit_button.pack()[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mquit_button.bind('<Button-1>', quit_pass_gen)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mroot.mainloop()[m[41m[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1c0d080[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m# LSBSteg[m
+[32m+[m[32m- A simple steganography tool using the least significant bit of every byte in *.bmp files to store hidden data.[m
+[32m+[m[32m- Mainly referenced from [Omiher's work](https://github.com/omriher/LSB_Steganography).[m
+[32m+[m
+[32m+[m[32m## Usage[m
+[32m+[m[32m- Python 3.x with Tkinter installed[m
+[32m+[m[32m- PIL package (Mention: In Mac, install it by 'sudo pip3 install pillow'.)[m
+[32m+[m[32m- run 'python3 GUI.py'[m
+[32m+[m
+[32m+[m[32m## Instruction[m
+[32m+[m[32m- This steganography tool is compitable with both 256 gray & 24 bit true color bmp files.[m
+[32m+[m[32m- Apart from the first 1078 bits in header, I use the next 32 bytes to store the length of hidden message.(An int is 32 bits long, which can be hidden in 32 bytes.)[m
+[32m+[m[32m- So a 256 gray bmp file with 'w*h-32<=0' or a 24 bit true color bmp file with 'w*h*3-32<=0' can not hide message using this tool.[m
+[32m+[m
+[32m+[m[32m## Screenshots[m
+[32m+[m[32mUI![](https://github.com/BIOTONIC/LSBSteg/blob/master/Screenshots/Screen%20Shot%202017-05-27%20at%2017.39.50.png)[m
+[32m+[m[32mEncrypt Message![](https://github.com/BIOTONIC/LSBSteg/blob/master/Screenshots/Screen%20Shot%202017-05-27%20at%2017.43.48.png)[m
+[32m+[m[32mDecrypt Message![](https://github.com/BIOTONIC/LSBSteg/blob/master/Screenshots/Screen%20Shot%202017-05-27%20at%2017.44.10.png)[m
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.39.50.png b/Screenshots/Screen Shot 2017-05-27 at 17.39.50.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0cbc10d[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.39.50.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.42.58.png b/Screenshots/Screen Shot 2017-05-27 at 17.42.58.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a7ce4a2[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.42.58.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.43.06.png b/Screenshots/Screen Shot 2017-05-27 at 17.43.06.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cfb51f5[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.43.06.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.43.18.png b/Screenshots/Screen Shot 2017-05-27 at 17.43.18.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4897367[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.43.18.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.43.48.png b/Screenshots/Screen Shot 2017-05-27 at 17.43.48.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7a44635[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.43.48.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.44.00.png b/Screenshots/Screen Shot 2017-05-27 at 17.44.00.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..548f062[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.44.00.png differ
+[1mdiff --git a/Screenshots/Screen Shot 2017-05-27 at 17.44.10.png b/Screenshots/Screen Shot 2017-05-27 at 17.44.10.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c1de25d[m
+Binary files /dev/null and b/Screenshots/Screen Shot 2017-05-27 at 17.44.10.png differ
+[1mdiff --git a/__pycache__/Decryption.cpython-38.pyc b/__pycache__/Decryption.cpython-38.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4437027[m
+Binary files /dev/null and b/__pycache__/Decryption.cpython-38.pyc differ
+[1mdiff --git a/__pycache__/Encryption.cpython-38.pyc b/__pycache__/Encryption.cpython-38.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d4e7711[m
+Binary files /dev/null and b/__pycache__/Encryption.cpython-38.pyc differ
+[1mdiff --git a/__pycache__/GUI.cpython-38.pyc b/__pycache__/GUI.cpython-38.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c98cf65[m
+Binary files /dev/null and b/__pycache__/GUI.cpython-38.pyc differ
+[1mdiff --git a/__pycache__/GUI_Hash_CHECKSUM.cpython-38.pyc b/__pycache__/GUI_Hash_CHECKSUM.cpython-38.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ebdc1ed[m
+Binary files /dev/null and b/__pycache__/GUI_Hash_CHECKSUM.cpython-38.pyc differ
+[1mdiff --git a/__pycache__/PassGen.cpython-38.pyc b/__pycache__/PassGen.cpython-38.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5a9b7cc[m
+Binary files /dev/null and b/__pycache__/PassGen.cpython-38.pyc differ
+[1mdiff --git a/cbs_toolkit.py b/cbs_toolkit.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ed1bc6b[m
+[1m--- /dev/null[m
+[1m+++ b/cbs_toolkit.py[m
+[36m@@ -0,0 +1,66 @@[m
+[32m+[m[32mfrom tkinter import *[m
+[32m+[m
+[32m+[m[32mroot = Tk()[m
+[32m+[m
+[32m+[m[32mdef button1_importer(event):[m
+[32m+[m
+[32m+[m[32m        import GUI_Hash_CHECKSUM[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef button2_importer(event):[m
+[32m+[m[32m    import GUI[m
+[32m+[m
+[32m+[m[32mdef button3_importer(event):[m
+[32m+[m[32m        import PassGen[m
+[32m+[m
+[32m+[m[32mdef exit(event):[m
+[32m+[m
+[32m+[m[32m    root.quit()[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef checksum_verifier():[m
+[32m+[m
+[32m+[m[32m    chksum_frame = Frame(root)[m
+[32m+[m[32m    chksum_frame.pack()[m
+[32m+[m[32m    # chksum_label = Label(chksum_frame,text="Checksum-Verifier")[m
+[32m+[m[32m    # chksum_label.pack()[m
+[32m+[m[32m    button1 = Button(chksum_frame, text='checksum_verifier', fg='red')[m
+[32m+[m[32m    button1.pack()[m
+[32m+[m[32m    button1.bind('<Button-1>', button1_importer)[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef steganography():[m
+[32m+[m
+[32m+[m[32m    stego_frame = Frame(root).pack()[m
+[32m+[m[32m    button2 = Button(stego_frame, text='steganograpy', fg='green')[m
+[32m+[m[32m    button2.pack()[m
+[32m+[m[32m    button2.bind('<Button-1>',button2_importer)[m
+[32m+[m[32mdef password_generator():[m
+[32m+[m[32m    encryption_frame = Frame(root).pack()[m
+[32m+[m
+[32m+[m[32m    button3 = Button(encryption_frame, text='password_generator', fg='yellow')[m
+[32m+[m[32m    button3.pack()[m
+[32m+[m[32m    button3.bind('<Button-1>',button3_importer )[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef quit():[m
+[32m+[m[32m    bottom_frame = Frame(root).pack()[m
+[32m+[m[32m    button4 = Button(bottom_frame,text = 'Exit',fg = 'red')[m
+[32m+[m[32m    button4.pack()[m
+[32m+[m[32m    button4.bind('<Button-1>',exit)[m
+[32m+[m
+[32m+[m[32mchecksum_verifier()[m
+[32m+[m
+[32m+[m[32msteganography()[m
+[32m+[m
+[32m+[m[32mpassword_generator()[m
+[32m+[m
+[32m+[m[32mquit()[m
+[32m+[m
+[32m+[m[32mroot.title('Munalula-Sikazwe CyberSecurity Toolkit')[m
+[32m+[m
+[32m+[m[32mroot.mainloop()[m
+[1mdiff --git a/requirements.txt b/requirements.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..334e961[m
+[1m--- /dev/null[m
+[1m+++ b/requirements.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mPillow==7.2.0[m
+[1mdiff --git a/venv/bin/Activate.ps1 b/venv/bin/Activate.ps1[m
+[1mnew file mode 100644[m
+[1mindex 0000000..900f50e[m
+[1m--- /dev/null[m
+[1m+++ b/venv/bin/Activate.ps1[m
+[36m@@ -0,0 +1,230 @@[m
+[32m+[m[32m<#[m[41m[m
+[32m+[m[32m.Synopsis[m[41m[m
+[32m+[m[32mActivate a Python virtual environment for the current Powershell session.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Description[m[41m[m
+[32m+[m[32mPushes the python executable for a virtual environment to the front of the[m[41m[m
+[32m+[m[32m$Env:PATH environment variable and sets the prompt to signify that you are[m[41m[m
+[32m+[m[32min a Python virtual environment. Makes use of the command line switches as[m[41m[m
+[32m+[m[32mwell as the `pyvenv.cfg` file values present in the virtual environment.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Parameter VenvDir[m[41m[m
+[32m+[m[32mPath to the directory that contains the virtual environment to activate. The[m[41m[m
+[32m+[m[32mdefault value for this is the parent of the directory that the Activate.ps1[m[41m[m
+[32m+[m[32mscript is located within.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Parameter Prompt[m[41m[m
+[32m+[m[32mThe prompt prefix to display when this virtual environment is activated. By[m[41m[m
+[32m+[m[32mdefault, this prompt is the name of the virtual environment folder (VenvDir)[m[41m[m
+[32m+[m[32msurrounded by parentheses and followed by a single space (ie. '(.venv) ').[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Example[m[41m[m
+[32m+[m[32mActivate.ps1[m[41m[m
+[32m+[m[32mActivates the Python virtual environment that contains the Activate.ps1 script.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Example[m[41m[m
+[32m+[m[32mActivate.ps1 -Verbose[m[41m[m
+[32m+[m[32mActivates the Python virtual environment that contains the Activate.ps1 script,[m[41m[m
+[32m+[m[32mand shows extra information about the activation as it executes.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Example[m[41m[m
+[32m+[m[32mActivate.ps1 -VenvDir C:\Users\MyUser\Common\.venv[m[41m[m
+[32m+[m[32mActivates the Python virtual environment located in the specified location.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Example[m[41m[m
+[32m+[m[32mActivate.ps1 -Prompt "MyPython"[m[41m[m
+[32m+[m[32mActivates the Python virtual environment that contains the Activate.ps1 script,[m[41m[m
+[32m+[m[32mand prefixes the current prompt with the specified string (surrounded in[m[41m[m
+[32m+[m[32mparentheses) while the virtual environment is active.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m#>[m[41m[m
+[32m+[m[32mParam([m[41m[m
+[32m+[m[32m    [Parameter(Mandatory = $false)][m[41m[m
+[32m+[m[32m    [String][m[41m[m
+[32m+[m[32m    $VenvDir,[m[41m[m
+[32m+[m[32m    [Parameter(Mandatory = $false)][m[41m[m
+[32m+[m[32m    [String][m[41m[m
+[32m+[m[32m    $Prompt[m[41m[m
+[32m+[m[32m)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<# Function declarations --------------------------------------------------- #>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<#[m[41m[m
+[32m+[m[32m.Synopsis[m[41m[m
+[32m+[m[32mRemove all shell session elements added by the Activate script, including the[m[41m[m
+[32m+[m[32maddition of the virtual environment's Python executable from the beginning of[m[41m[m
+[32m+[m[32mthe PATH variable.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Parameter NonDestructive[m[41m[m
+[32m+[m[32mIf present, do not remove this function from the global namespace for the[m[41m[m
+[32m+[m[32msession.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m#>[m[41m[m
+[32m+[m[32mfunction global:deactivate ([switch]$NonDestructive) {[m[41m[m
+[32m+[m[32m    # Revert to original values[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # The prior prompt:[m[41m[m
+[32m+[m[32m    if (Test-Path -Path Function:_OLD_VIRTUAL_PROMPT) {[m[41m[m
+[32m+[m[32m        Copy-Item -Path Function:_OLD_VIRTUAL_PROMPT -Destination Function:prompt[m[41m[m
+[32m+[m[32m        Remove-Item -Path Function:_OLD_VIRTUAL_PROMPT[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # The prior PYTHONHOME:[m[41m[m
+[32m+[m[32m    if (Test-Path -Path Env:_OLD_VIRTUAL_PYTHONHOME) {[m[41m[m
+[32m+[m[32m        Copy-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME -Destination Env:PYTHONHOME[m[41m[m
+[32m+[m[32m        Remove-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # The prior PATH:[m[41m[m
+[32m+[m[32m    if (Test-Path -Path Env:_OLD_VIRTUAL_PATH) {[m[41m[m
+[32m+[m[32m        Copy-Item -Path Env:_OLD_VIRTUAL_PATH -Destination Env:PATH[m[41m[m
+[32m+[m[32m        Remove-Item -Path Env:_OLD_VIRTUAL_PATH[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # Just remove the VIRTUAL_ENV altogether:[m[41m[m
+[32m+[m[32m    if (Test-Path -Path Env:VIRTUAL_ENV) {[m[41m[m
+[32m+[m[32m        Remove-Item -Path env:VIRTUAL_ENV[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # Just remove the _PYTHON_VENV_PROMPT_PREFIX altogether:[m[41m[m
+[32m+[m[32m    if (Get-Variable -Name "_PYTHON_VENV_PROMPT_PREFIX" -ErrorAction SilentlyContinue) {[m[41m[m
+[32m+[m[32m        Remove-Variable -Name _PYTHON_VENV_PROMPT_PREFIX -Scope Global -Force[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # Leave deactivate function in the global namespace if requested:[m[41m[m
+[32m+[m[32m    if (-not $NonDestructive) {[m[41m[m
+[32m+[m[32m        Remove-Item -Path function:deactivate[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<#[m[41m[m
+[32m+[m[32m.Description[m[41m[m
+[32m+[m[32mGet-PyVenvConfig parses the values from the pyvenv.cfg file located in the[m[41m[m
+[32m+[m[32mgiven folder, and returns them in a map.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mFor each line in the pyvenv.cfg file, if that line can be parsed into exactly[m[41m[m
+[32m+[m[32mtwo strings separated by `=` (with any amount of whitespace surrounding the =)[m[41m[m
+[32m+[m[32mthen it is considered a `key = value` line. The left hand string is the key,[m[41m[m
+[32m+[m[32mthe right hand is the value.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mIf the value starts with a `'` or a `"` then the first and last character is[m[41m[m
+[32m+[m[32mstripped from the value before being captured.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m.Parameter ConfigDir[m[41m[m
+[32m+[m[32mPath to the directory that contains the `pyvenv.cfg` file.[m[41m[m
+[32m+[m[32m#>[m[41m[m
+[32m+[m[32mfunction Get-PyVenvConfig([m[41m[m
+[32m+[m[32m    [String][m[41m[m
+[32m+[m[32m    $ConfigDir[m[41m[m
+[32m+[m[32m) {[m[41m[m
+[32m+[m[32m    Write-Verbose "Given ConfigDir=$ConfigDir, obtain values in pyvenv.cfg"[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # Ensure the file exists, and issue a warning if it doesn't (but still allow the function to continue).[m[41m[m
+[32m+[m[32m    $pyvenvConfigPath = Join-Path -Resolve -Path $ConfigDir -ChildPath 'pyvenv.cfg' -ErrorAction Continue[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # An empty map will be returned if no config file is found.[m[41m[m
+[32m+[m[32m    $pyvenvConfig = @{ }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    if ($pyvenvConfigPath) {[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        Write-Verbose "File exists, parse `key = value` lines"[m[41m[m
+[32m+[m[32m        $pyvenvConfigContent = Get-Content -Path $pyvenvConfigPath[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        $pyvenvConfigContent | ForEach-Object {[m[41m[m
+[32m+[m[32m            $keyval = $PSItem -split "\s*=\s*", 2[m[41m[m
+[32m+[m[32m            if ($keyval[0] -and $keyval[1]) {[m[41m[m
+[32m+[m[32m                $val = $keyval[1][m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m                # Remove extraneous quotations around a string value.[m[41m[m
+[32m+[m[32m                if ("'""".Contains($val.Substring(0,1))) {[m[41m[m
+[32m+[m[32m                    $val = $val.Substring(1, $val.Length - 2)[m[41m[m
+[32m+[m[32m                }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m                $pyvenvConfig[$keyval[0]] = $val[m[41m[m
+[32m+[m[32m                Write-Verbose "Adding Key: '$($keyval[0])'='$val'"[m[41m[m
+[32m+[m[32m            }[m[41m[m
+[32m+[m[32m        }[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m    return $pyvenvConfig[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<# Begin Activate script --------------------------------------------------- #>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Determine the containing directory of this script[m[41m[m
+[32m+[m[32m$VenvExecPath = Split-Path -Parent $MyInvocation.MyCommand.Definition[m[41m[m
+[32m+[m[32m$VenvExecDir = Get-Item -Path $VenvExecPath[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mWrite-Verbose "Activation script is located in path: '$VenvExecPath'"[m[41m[m
+[32m+[m[32mWrite-Verbose "VenvExecDir Fullname: '$($VenvExecDir.FullName)"[m[41m[m
+[32m+[m[32mWrite-Verbose "VenvExecDir Name: '$($VenvExecDir.Name)"[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Set values required in priority: CmdLine, ConfigFile, Default[m[41m[m
+[32m+[m[32m# First, get the location of the virtual environment, it might not be[m[41m[m
+[32m+[m[32m# VenvExecDir if specified on the command line.[m[41m[m
+[32m+[m[32mif ($VenvDir) {[m[41m[m
+[32m+[m[32m    Write-Verbose "VenvDir given as parameter, using '$VenvDir' to determine values"[m[41m[m
+[32m+[m[32m} else {[m[41m[m
+[32m+[m[32m    Write-Verbose "VenvDir not given as a parameter, using parent directory name as VenvDir."[m[41m[m
+[32m+[m[32m    $VenvDir = $VenvExecDir.Parent.FullName.TrimEnd("\\/")[m[41m[m
+[32m+[m[32m    Write-Verbose "VenvDir=$VenvDir"[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Next, read the `pyvenv.cfg` file to determine any required value such[m[41m[m
+[32m+[m[32m# as `prompt`.[m[41m[m
+[32m+[m[32m$pyvenvCfg = Get-PyVenvConfig -ConfigDir $VenvDir[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Next, set the prompt from the command line, or the config file, or[m[41m[m
+[32m+[m[32m# just use the name of the virtual environment folder.[m[41m[m
+[32m+[m[32mif ($Prompt) {[m[41m[m
+[32m+[m[32m    Write-Verbose "Prompt specified as argument, using '$Prompt'"[m[41m[m
+[32m+[m[32m} else {[m[41m[m
+[32m+[m[32m    Write-Verbose "Prompt not specified as argument to script, checking pyvenv.cfg value"[m[41m[m
+[32m+[m[32m    if ($pyvenvCfg -and $pyvenvCfg['prompt']) {[m[41m[m
+[32m+[m[32m        Write-Verbose "  Setting based on value in pyvenv.cfg='$($pyvenvCfg['prompt'])'"[m[41m[m
+[32m+[m[32m        $Prompt = $pyvenvCfg['prompt'];[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m    else {[m[41m[m
+[32m+[m[32m        Write-Verbose "  Setting prompt based on parent's directory's name. (Is the directory name passed to venv module when creating the virutal environment)"[m[41m[m
+[32m+[m[32m        Write-Verbose "  Got leaf-name of $VenvDir='$(Split-Path -Path $venvDir -Leaf)'"[m[41m[m
+[32m+[m[32m        $Prompt = Split-Path -Path $venvDir -Leaf[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mWrite-Verbose "Prompt = '$Prompt'"[m[41m[m
+[32m+[m[32mWrite-Verbose "VenvDir='$VenvDir'"[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Deactivate any currently active virtual environment, but leave the[m[41m[m
+[32m+[m[32m# deactivate function in place.[m[41m[m
+[32m+[m[32mdeactivate -nondestructive[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Now set the environment variable VIRTUAL_ENV, used by many tools to determine[m[41m[m
+[32m+[m[32m# that there is an activated venv.[m[41m[m
+[32m+[m[32m$env:VIRTUAL_ENV = $VenvDir[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mif (-not $Env:VIRTUAL_ENV_DISABLE_PROMPT) {[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    Write-Verbose "Setting prompt to '$Prompt'"[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    # Set the prompt to include the env name[m[41m[m
+[32m+[m[32m    # Make sure _OLD_VIRTUAL_PROMPT is global[m[41m[m
+[32m+[m[32m    function global:_OLD_VIRTUAL_PROMPT { "" }[m[41m[m
+[32m+[m[32m    Copy-Item -Path function:prompt -Destination function:_OLD_VIRTUAL_PROMPT[m[41m[m
+[32m+[m[32m    New-Variable -Name _PYTHON_VENV_PROMPT_PREFIX -Description "Python virtual environment prompt prefix" -Scope Global -Option ReadOnly -Visibility Public -Value $Prompt[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    function global:prompt {[m[41m[m
+[32m+[m[32m        Write-Host -NoNewline -ForegroundColor Green "($_PYTHON_VENV_PROMPT_PREFIX) "[m[41m[m
+[32m+[m[32m        _OLD_VIRTUAL_PROMPT[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Clear PYTHONHOME[m[41m[m
+[32m+[m[32mif (Test-Path -Path Env:PYTHONHOME) {[m[41m[m
+[32m+[m[32m    Copy-Item -Path Env:PYTHONHOME -Destination Env:_OLD_VIRTUAL_PYTHONHOME[m[41m[m
+[32m+[m[32m    Remove-Item -Path Env:PYTHONHOME[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Add the venv to the PATH[m[41m[m
+[32m+[m[32mCopy-Item -Path Env:PATH -Destination Env:_OLD_VIRTUAL_PATH[m[41m[m
+[32m+[m[32m$Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"[m[41m[m
+[1mdiff --git a/venv/bin/activate b/venv/bin/activate[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a0968c3[m
+[1m--- /dev/null[m
+[1m+++ b/venv/bin/activate[m
+[36m@@ -0,0 +1,76 @@[m
+[32m+[m[32m# This file must be used with "source bin/activate" *from bash*[m
+[32m+[m[32m# you cannot run it directly[m
+[32m+[m
+[32m+[m[32mdeactivate () {[m
+[32m+[m[32m    # reset old environment variables[m
+[32m+[m[32m    if [ -n "${_OLD_VIRTUAL_PATH:-}" ] ; then[m
+[32m+[m[32m        PATH="${_OLD_VIRTUAL_PATH:-}"[m
+[32m+[m[32m        export PATH[m
+[32m+[m[32m        unset _OLD_VIRTUAL_PATH[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    if [ -n "${_OLD_VIRTUAL_PYTHONHOME:-}" ] ; then[m
+[32m+[m[32m        PYTHONHOME="${_OLD_VIRTUAL_PYTHONHOME:-}"[m
+[32m+[m[32m        export PYTHONHOME[m
+[32m+[m[32m        unset _OLD_VIRTUAL_PYTHONHOME[m
+[32m+[m[32m    fi[m
+[32m+[m
+[32m+[m[32m    # This should detect bash and zsh, which have a hash command that must[m
+[32m+[m[32m    # be called to get it to forget past commands.  Without forgetting[m
+[32m+[m[32m    # past commands the $PATH changes we made may not be respected[m
+[32m+[m[32m    if [ -n "${BASH:-}" -o -n "${ZSH_VERSION:-}" ] ; then[m
+[32m+[m[32m        hash -r[m
+[32m+[m[32m    fi[m
+[32m+[m
+[32m+[m[32m    if [ -n "${_OLD_VIRTUAL_PS1:-}" ] ; then[m
+[32m+[m[32m        PS1="${_OLD_VIRTUAL_PS1:-}"[m
+[32m+[m[32m        export PS1[m
+[32m+[m[32m        unset _OLD_VIRTUAL_PS1[m
+[32m+[m[32m    fi[m
+[32m+[m
+[32m+[m[32m    unset VIRTUAL_ENV[m
+[32m+[m[32m    if [ ! "${1:-}" = "nondestructive" ] ; then[m
+[32m+[m[32m    # Self destruct![m
+[32m+[m[32m        unset -f deactivate[m
+[32m+[m[32m    fi[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# unset irrelevant variables[m
+[32m+[m[32mdeactivate nondestructive[m
+[32m+[m
+[32m+[m[32mVIRTUAL_ENV="/home/deus/PycharmProjects/Cyber_Security_Mini_Tool_kit/venv"[m
+[32m+[m[32mexport VIRTUAL_ENV[m
+[32m+[m
+[32m+[m[32m_OLD_VIRTUAL_PATH="$PATH"[m
+[32m+[m[32mPATH="$VIRTUAL_ENV/bin:$PATH"[m
+[32m+[m[32mexport PATH[m
+[32m+[m
+[32m+[m[32m# unset PYTHONHOME if set[m
+[32m+[m[32m# this will fail if PYTHONHOME is set to the empty string (which is bad anyway)[m
+[32m+[m[32m# could use `if (set -u; : $PYTHONHOME) ;` in bash[m
+[32m+[m[32mif [ -n "${PYTHONHOME:-}" ] ; then[m
+[32m+[m[32m    _OLD_VIRTUAL_PYTHONHOME="${PYTHONHOME:-}"[m
+[32m+[m[32m    unset PYTHONHOME[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then[m
+[32m+[m[32m    _OLD_VIRTUAL_PS1="${PS1:-}"[m
+[32m+[m[32m    if [ "x(venv) " != x ] ; then[m
+[32m+[m	[32mPS1="(venv) ${PS1:-}"[m
+[32m+[m[32m    else[m
+[32m+[m[32m    if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then[m
+[32m+[m[32m        # special case for Aspen magic directories[m
+[32m+[m[32m        # see http://www.zetadev.com/software/aspen/[m
+[32m+[m[32m        PS1="[`basename \`dirname \"$VIRTUAL_ENV\"\``] $PS1"[m
+[32m+[m[32m    else[m
+[32m+[m[32m        PS1="(`basename \"$VIRTUAL_ENV\"`)$PS1"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    export PS1[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# This should detect bash and zsh, which have a hash command that must[m
+[32m+[m[32m# be called to get it to forget past commands.  Without forgetting[m
+[32m+[m[32m# past commands the $PATH changes we made may not be respected[m
+[32m+[m[32mif [ -n "${BASH:-}" -o -n "${ZSH_VERSION:-}" ] ; then[m
+[32m+[m[32m    hash -r[m
+[32m+[m[32mfi[m
+[1mdiff --git a/venv/bin/activate.csh b/venv/bin/activate.csh[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e84faf6[m
+[1m--- /dev/null[m
+[1m+++ b/venv/bin/activate.csh[m
+[36m@@ -0,0 +1,37 @@[m
+[32m+[m[32m# This file must be used with "source bin/activate.csh" *from csh*.[m
+[32m+[m[32m# You cannot run it directly.[m
+[32m+[m[32m# Created by Davide Di Blasi <davidedb@gmail.com>.[m
+[32m+[m[32m# Ported to Python 3.3 venv by Andrew Svetlov <andrew.svetlov@gmail.com>[m
+[32m+[m
+[32m+[m[32malias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PATH" && unset _OLD_VIRTUAL_PATH; rehash; test $?_OLD_VIRTUAL_PROMPT != 0 && set prompt="$_OLD_VIRTUAL_PROMPT" && unset _OLD_VIRTUAL_PROMPT; unsetenv VIRTUAL_ENV; test "\!:*" != "nondestructive" && unalias deactivate'[m
+[32m+[m
+[32m+[m[32m# Unset irrelevant variables.[m
+[32m+[m[32mdeactivate nondestructive[m
+[32m+[m
+[32m+[m[32msetenv VIRTUAL_ENV "/home/deus/PycharmProjects/Cyber_Security_Mini_Tool_kit/venv"[m
+[32m+[m
+[32m+[m[32mset _OLD_VIRTUAL_PATH="$PATH"[m
+[32m+[m[32msetenv PATH "$VIRTUAL_ENV/bin:$PATH"[m
+[32m+[m
+[32m+[m
+[32m+[m[32mset _OLD_VIRTUAL_PROMPT="$prompt"[m
+[32m+[m
+[32m+[m[32mif (! "$?VIRTUAL_ENV_DISABLE_PROMPT") then[m
+[32m+[m[32m    if ("venv" != "") then[m
+[32m+[m[32m        set env_name = "venv"[m
+[32m+[m[32m    else[m
+[32m+[m[32m        if (`basename "VIRTUAL_ENV"` == "__") then[m
+[32m+[m[32m            # special case for Aspen magic directories[m
+[32m+[m[32m            # see http://www.zetadev.com/software/aspen/[m
+[32m+[m[32m            set env_name = `basename \`dirname "$VIRTUAL_ENV"\``[m
+[32m+[m[32m        else[m
+[32m+[m[32m            set env_name = `basename "$VIRTUAL_ENV"`[m
+[32m+[m[32m        endif[m
+[32m+[m[32m    endif[m
+[32m+[m[32m    set prompt = "[$env_name] $prompt"[m
+[32m+[m[32m    unset env_name[m
+[32m+[m[32mendif[m
+[32m+[m
+[32m+[m[32malias pydoc python -m pydoc[m
+[32m+[m
+[32m+[m[32mrehash[m
+[1mdiff --git a/venv/bin/activate.fish b/venv/bin/activate.fish[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d859fa3[m
+[1m--- /dev/null[m
+[1m+++ b/venv/bin/activate.fish[m
+[36m@@ -0,0 +1,75 @@[m
+[32m+[m[32m# This file must be used with ". bin/activate.fish" *from fish* (http://fishshell.org)[m
+[32m+[m[32m# you cannot run it directly[m
+[32m+[m
+[32m+[m[32mfunction deactivate  -d "Exit virtualenv and return to normal shell environment"[m
+[32m+[m[32m    # reset old environment variables[m
+[32m+[m[32m    if test -n "$_OLD_VIRTUAL_PATH"[m
+[32m+[m[32m        set -gx PATH $_OLD_VIRTUAL_PATH[m
+[32m+[m[32m        set -e _OLD_VIRTUAL_PATH[m
+[32m+[m[32m    end[m
+[32m+[m[32m    if test -n "$_OLD_VIRTUAL_PYTHONHOME"[m
+[32m+[m[32m        set -gx PYTHONHOME $_OLD_VIRTUAL_PYTHONHOME[m
+[32m+[m[32m        set -e _OLD_VIRTUAL_PYTHONHOME[m
+[32m+[m[32m    end[m
+[32m+[m
+[32m+[m[32m    if test -n "$_OLD_FISH_PROMPT_OVERRIDE"[m
+[32m+[m[32m        functions -e fish_prompt[m
+[32m+[m[32m        set -e _OLD_FISH_PROMPT_OVERRIDE[m
+[32m+[m[32m        functions -c _old_fish_prompt fish_prompt[m
+[32m+[m[32m        functions -e _old_fish_prompt[m
+[32m+[m[32m    end[m
+[32m+[m
+[32m+[m[32m    set -e VIRTUAL_ENV[m
+[32m+[m[32m    if test "$argv[1]" != "nondestructive"[m
+[32m+[m[32m        # Self destruct![m
+[32m+[m[32m        functions -e deactivate[m
+[32m+[m[32m    end[m
+[32m+[m[32mend[m
+[32m+[m
+[32m+[m[32m# unset irrelevant variables[m
+[32m+[m[32mdeactivate nondestructive[m
+[32m+[m
+[32m+[m[32mset -gx VIRTUAL_ENV "/home/deus/PycharmProjects/Cyber_Security_Mini_Tool_kit/venv"[m
+[32m+[m
+[32m+[m[32mset -gx _OLD_VIRTUAL_PATH $PATH[m
+[32m+[m[32mset -gx PATH "$VIRTUAL_ENV/bin" $PATH[m
+[32m+[m
+[32m+[m[32m# unset PYTHONHOME if set[m
+[32m+[m[32mif set -q PYTHONHOME[m
+[32m+[m[32m    set -gx _OLD_VIRTUAL_PYTHONHOME $PYTHONHOME[m
+[32m+[m[32m    set -e PYTHONHOME[m
+[32m+[m[32mend[m
+[32m+[m
+[32m+[m[32mif test -z "$VIRTUAL_ENV_DISABLE_PROMPT"[m
+[32m+[m[32m    # fish uses a function instead of an env var to generate the prompt.[m
+[32m+[m
+[32m+[m[32m    # save the current fish_prompt function as the function _old_fish_prompt[m
+[32m+[m[32m    functions -c fish_prompt _old_fish_prompt[m
+[32m+[m
+[32m+[m[32m    # with the original prompt function renamed, we can override with our own.[m
+[32m+[m[32m    function fish_prompt[m
+[32m+[m[32m        # Save the return status of the last command[m
+[32m+[m[32m        set -l old_status $status[m
+[32m+[m
+[32m+[m[32m        # Prompt override?[m
+[32m+[m[32m        if test -n "(venv) "[m
+[32m+[m[32m            printf "%s%s" "(venv) " (set_color normal)[m
+[32m+[m[32m        else[m
+[32m+[m[32m            # ...Otherwise, prepend env[m
+[32m+[m[32m            set -l _checkbase (basename "$VIRTUAL_ENV")[m
+[32m+[m[32m            if test $_checkbase = "__"[m
+[32m+[m[32m                # special case for Aspen magic directories[m
+[32m+[m[32m                # see http://www.zetadev.com/software/aspen/[m
+[32m+[m[32m                printf "%s[%s]%s " (set_color -b blue white) (basename (dirname "$VIRTUAL_ENV")) (set_color normal)[m
+[32m+[m[32m            else[m
+[32m+[m[32m                printf "%s(%s)%s" (set_color -b blue white) (basename "$VIRTUAL_ENV") (set_color normal)[m
+[32m+[m[32m            end[m
+[32m+[m[32m        end[m
+[32m+[m
+[32m+[m[32m        # Restore the return status of the previous command.[m
+[32m+[m[32m        echo "exit $old_status" | .[m
+[32m+[m[32m        _old_fish_prompt[m
+[32m+[m[32m    end[m
+[32m+[m
+[32m+[m[32m    set -gx _OLD_FISH_PROMPT_OVERRIDE "$VIRTUAL_ENV"[m
+[32m+[m[32mend[m
+[1mdiff --git a/venv/bin/easy_install b/venv/bin/easy_install[m
+[1mnew file mode 100755[m
+[1mindex 0000000..dd5166e[m
+[1m--- /dev/null[m
+[1m+++ b/venv/bin/easy_install[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m#!/home/deus/PycharmProjects/Cyber_Security_Mini_Tool_kit/venv/bin/python[m
+[32m+[m[32m# -*- coding: utf-8 -*-[m
+[32m+[m[32mimport re[m
+[32m+[m[32mimport sys[m
+[32m+[m[32mfrom
