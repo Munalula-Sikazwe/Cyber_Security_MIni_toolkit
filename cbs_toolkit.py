@@ -10,11 +10,7 @@ root = Tk()
 quit_button = Button(root, text='Exit', fg='red')
 quit_button.pack(side=BOTTOM)
 
-<<<<<<< HEAD
-img = ImageTk.PhotoImage(Image.open("E:\Cyber_Security_MIni_toolkit\DMI-St.-Eugene-University-logo-258x300.png"))
-=======
 img = ImageTk.PhotoImage(Image.open("DMI-St.-Eugene-University-logo-258x300.png"))
->>>>>>> 27ad982bdee10016eeb58139123d1c43e4431be7
 panel = Label(root, image = img,)
 panel.pack(side = "top")
 f1 = StringVar()
