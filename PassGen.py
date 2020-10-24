@@ -6,7 +6,7 @@ root = Tk()
 root.geometry("400x280")
 root.title("Password Generator")
 root.attributes("-fullscreen", 1)
-root.resizable(width=FALSE, height=FALSE)
+root.resizable(width=tr, height=FALSE)
 
 # intro text
 title = StringVar()
